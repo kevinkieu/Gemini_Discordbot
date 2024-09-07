@@ -38,17 +38,17 @@ text_generation_config = {
 }
 
 safety_settings = [
-    {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_ONLY_HIGH"},
-    {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_ONLY_HIGH"},
-    {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_ONLY_HIGH"},
-    {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_ONLY_HIGH"}
+    {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
 ]
 
-gemini_model = genai.GenerativeModel(model_name="gemini-1.5-flash", generation_config=text_generation_config, safety_settings=safety_settings)
+#gemini_model = genai.GenerativeModel(model_name="gemini-1.5-flash-exp-0827 ", generation_config=text_generation_config, safety_settings=safety_settings)
 
 # Uncomment these if you want to use the system prompt but it's a bit weird
-# gemini_system_prompt = ""
-# gemini_model = genai.GenerativeModel(model_name="gemini-1.5-flash", generation_config=text_generation_config, safety_settings=safety_settings,system_instruction=gemini_system_prompt)
+gemini_system_prompt = "your name is Jarvis, and you are a Sales Manager with 10 years of experience."
+gemini_model = genai.GenerativeModel(model_name="gemini-1.5-flash-exp-0827 ", generation_config=text_generation_config, safety_settings=safety_settings,system_instruction=gemini_system_prompt)
 
 #---------------------------------------------Discord Code-------------------------------------------------
 # Initialize Discord bot
