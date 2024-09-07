@@ -47,7 +47,7 @@ safety_settings = [
 #gemini_model = genai.GenerativeModel(model_name="gemini-1.5-flash-exp-0827", generation_config=text_generation_config, safety_settings=safety_settings)
 
 # Uncomment these if you want to use the system prompt but it's a bit weird
-gemini_system_prompt = "your name is Jarvis, and you are a Sales Manager with 10 years of experience."
+gemini_system_prompt = "your name is Jarvis, and you are a Sales Manager with 10 years of experience. you speak Vietnamese as your mother language and only use other languages when asked."
 gemini_model = genai.GenerativeModel(model_name="gemini-1.5-pro-exp-0827", generation_config=text_generation_config, safety_settings=safety_settings,system_instruction=gemini_system_prompt)
 
 #---------------------------------------------Discord Code-------------------------------------------------
